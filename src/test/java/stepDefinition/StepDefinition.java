@@ -29,6 +29,7 @@ public class StepDefinition {
 	public void user_opens_browser_and_browser_gets_loaded_with_the_dynamic_dropdown_visible() {
 		ChromeOptions chromeOptions = new ChromeOptions();
 		chromeOptions.addArguments("--remote-allow-origins=*");
+		chromeOptions.addArguments("--ignore-certificate-errors");
 		driver = new ChromeDriver(chromeOptions);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(90));
